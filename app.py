@@ -5,10 +5,10 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-# --- কনফিগারেশন (আপনার আসল টোকেনগুলো এখানে দেবেন) ---
-GEMINI_API_KEY = "AIzaSyDTQtyAri5KIxhgAWbq_Jq1aEeEH6qFhuk"
-PAGE_ACCESS_TOKEN = "EAAOA3Btgb08BRZAuu81Ld5pUTNFw0eQDT3NZBMn9wAVh9s6IN59WvZBWJVY2gxf6JQhDCgZCie4fo39u5GFoVnVGhhTA2BPJ8EmaIzRxwsgd2TiyuUsZBIdLHJHNr5mbZAqAIieXqKeJanOVDmPbl5zw3oRBpZBteLnF46TTgN07yUhKxW5GZAmtsMKtTiOZA47biPdTA"
-VERIFY_TOKEN = "addawah_bot_2026"
+# --- কনফিগারেশন (এখন আর কোডে সরাসরি Key থাকবে না, Render সার্ভার থেকে আসবে) ---
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+PAGE_ACCESS_TOKEN = os.environ.get("PAGE_ACCESS_TOKEN")
+VERIFY_TOKEN = os.environ.get("VERIFY_TOKEN", "addawah_bot_2026")
 
 def load_products():
     try:
